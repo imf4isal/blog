@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&display=swap");
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 3rem;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
+.container {
+  width: 60%;
+  margin: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.contact {
+  margin-top: 5rem;
+}
+
+.contact__hero p {
+  font-size: 7rem;
+  font-family: "Londrina Outline", cursive;
+  color: #494949;
+  letter-spacing: 1rem;
+}
+
+.contact__link {
+  margin-top: 10rem;
+}
+
+.contact-way {
+  list-style: none;
+  font-size: 1.5rem;
+  font-family: tahoma;
+  margin-bottom: 3rem;
+}
+
+.contact-way li {
+  display: inline-block;
+  color: grey;
+}
+
+.contact-way li a {
+  text-decoration: none;
+  color: grey;
+}
+
+.contact-way li:not(:last-child) {
+  margin-right: 5rem;
+}
+
+.navigation__checkbox {
+  display: none;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.navigation__button {
+  background-color: white;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 3rem;
+  right: 3rem;
+  z-index: 2000;
+  -webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+
+.navigation__background {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 3.5rem;
+  right: 3.5rem;
+  background-image: radial-gradient(white, white);
+  z-index: 1000;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+
+.navigation__nav {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1500;
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.navigation__list {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+}
+
+.navigation__item {
+  margin: 1rem;
+}
+
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: grey;
+  text-decoration: none;
+  text-transform: lowercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, grey 50%);
+  background-size: 300%;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.navigation__link:link span, .navigation__link:visited span {
+  margin-right: 1rem;
+}
+
+.navigation__link:hover, .navigation__link:active {
+  color: white;
+  background-position: 100%;
+  -webkit-transform: translateX(1rem);
+          transform: translateX(1rem);
+}
+
+.navigation__checkbox:checked ~ .navigation__background {
+  -webkit-transform: scale(80);
+          transform: scale(80);
+}
+
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+}
+
+.navigation__icon {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 2rem;
+  height: 1.2px;
+  background-color: grey;
+  display: inline-block;
+}
+
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.navigation__icon::before {
+  top: -0.7rem;
+}
+
+.navigation__icon::after {
+  top: 0.7rem;
+}
+
+.navigation__button:hover .navigation__icon::before {
+  top: -0.8rem;
+}
+
+.navigation__button:hover .navigation__icon::after {
+  top: 0.8rem;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.header {
+  position: relative;
+  height: 15vh;
+}
+
+.header__logo-box {
+  position: absolute;
+  left: 1rem;
+  top: 2rem;
+}
+
+.header__logo a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: "Baloo Tammudu 2", cursive;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  color: grey;
+  text-transform: uppercase;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+.about {
+  margin-top: 5rem;
+  font-family: "Hind Siliguri";
+  letter-spacing: 0.7px;
+}
+
+.about h1 {
+  margin-bottom: 1.5rem;
+  color: #3f3f3f;
+}
+
+.about p {
+  line-height: 1.6;
+  text-align: justify;
+  font-size: 1.3rem;
+  color: #474747;
+}
+
+.featured-article {
+  margin-top: 5rem;
+  font-family: tahoma;
+}
+
+.featured-article .featured-article__heading {
+  color: #3f3f3f;
+}
+
+.featured-article .featured-article__title {
+  margin-top: 3rem;
+  font-size: 1.3rem;
+  font-family: "Hind Siliguri";
+}
+
+.featured-article .featured-article__title a {
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #474747;
+}
+
+.footer {
+  margin: 5rem 0;
+}
+
+.footer hr {
+  opacity: 0.3;
+  margin: 1rem 0;
+}
+
+.footer__nav-list {
+  list-style: none;
+  text-align: center;
+}
+
+.footer__nav-item {
+  margin: 1rem;
+  display: inline-block;
+}
+
+.footer__nav-item a {
+  text-decoration: none;
+  color: grey;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-family: tahoma;
+}
+
+.footer__socialmedia-list {
+  list-style: none;
+  text-align: center;
+}
+
+.footer__socialmedia-list-item {
+  display: inline-block;
+  margin: 1rem;
+}
+
+.footer__socialmedia-list-item a {
+  text-decoration: none;
+  color: grey;
+  font-size: 1.1rem;
+}
+
+.footer__socialmedia-list-item a:hover {
+  color: #5a5a5a;
+}
+/*# sourceMappingURL=main.css.map */
